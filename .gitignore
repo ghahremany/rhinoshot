@@ -1,0 +1,30 @@
+# --- secrets (never publish the signing key) ---------------------------
+*.jks
+*.keystore
+keystore.properties
+keystore/
+local.properties
+
+# --- build output -------------------------------------------------------
+build/
+.gradle/
+.kotlin/
+out/
+captures/
+.externalNativeBuild
+.cxx
+DerivedData/
+*.xcworkspace
+xcuserdata/
+RhinoShot.xcodeproj/
+.swiftpm/
+Packages/
+
+# --- editors / OS -------------------------------------------------------
+*.iml
+.idea/
+.DS_Store
+Thumbs.db
+
+# --- MediaPipe model (downloaded by the Gradle build) -------------------
+app/src/main/assets/face_landmarker.task

@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<paths>
+    <external-files-path name="rhinoshot_external" path="." />
+    <files-path name="rhinoshot_files" path="." />
+    <cache-path name="rhinoshot_cache" path="." />
+</paths>
