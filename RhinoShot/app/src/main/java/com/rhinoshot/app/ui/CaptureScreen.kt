@@ -262,10 +262,12 @@ fun CaptureScreen(
         AndroidView(factory = { previewView }, modifier = Modifier.fillMaxSize())
 
         Canvas(Modifier.fillMaxSize()) {
-            val guideW = size.width * 0.68f
-            val guideH = size.height * 0.40f
+            // The guide sits in the upper half of the screen so that the
+            // control panel at the bottom never covers the face oval.
+            val guideW = size.width * 0.66f
+            val guideH = size.height * 0.34f
             val cx = size.width / 2f
-            val cy = size.height * 0.40f
+            val cy = size.height * 0.33f
             val guideColor = if (evaluation.ready) OkGreen else Color.White.copy(alpha = 0.7f)
             drawOval(
                 color = guideColor,
@@ -334,7 +336,7 @@ fun CaptureScreen(
                 targetYaw = shot.yaw,
                 modifier = Modifier
                     .fillMaxWidth()
-                    .height(76.dp),
+                    .height(56.dp),
             )
 
             val issues = evaluation.issues.take(3)
@@ -401,18 +403,19 @@ fun CaptureScreen(
                 TextButton(onClick = { onCancel() }) { Text("انصراف") }
             }
 
-            // The live read-outs sit at the very bottom of the screen so that
-            // they never cover the camera preview or the face guide.
-            Spacer(Modifier.height(6.dp))
+            // The live read-outs sit at the very bottom of the screen as small
+            // one-line chips, so they never cover the camera preview or the
+            // face guide.
+            Spacer(Modifier.height(4.dp))
 
             Row(
-                horizontalArrangement = Arrangement.spacedBy(8.dp),
+                horizontalArrangement = Arrangement.spacedBy(6.dp),
                 modifier = Modifier.fillMaxWidth(),
             ) {
-                MetricBox("چرخش", "${yaw.toInt()}°")
-                MetricBox("سر", "${pitch.toInt()}°")
-                MetricBox("لبخند", "${((state?.smile ?: 0f) * 100).toInt()}٪")
-                MetricBox(
+                MetricChip("چرخش", "${yaw.toInt()}°")
+                MetricChip("سر", "${pitch.toInt()}°")
+                MetricChip("لبخند", "${((state?.smile ?: 0f) * 100).toInt()}٪")
+                MetricChip(
                     "نور",
                     "${((state?.brightness ?: 0f) * 100).toInt()}٪",
                 )
@@ -435,17 +438,30 @@ fun CaptureScreen(
     }
 }
 
+/**
+ * A compact one-line chip: the label and the live value side by side.
+ * Four of them fill the bottom row of the capture screen without taking
+ * any room away from the camera preview.
+ */
 @Composable
-private fun RowScope.MetricBox(label: String, value: String) {
-    Column(
-        horizontalAlignment = Alignment.CenterHorizontally,
+private fun RowScope.MetricChip(label: String, value: String) {
+    Row(
         modifier = Modifier
-            .background(Color(0x33FFFFFF), androidx.compose.foundation.shape.RoundedCornerShape(8.dp))
-            .padding(horizontal = 10.dp, vertical = 6.dp)
+            .background(Color(0x26FFFFFF), androidx.compose.foundation.shape.RoundedCornerShape(999.dp))
+            .padding(horizontal = 6.dp, vertical = 3.dp)
             .weight(1f),
+        horizontalArrangement = Arrangement.Center,
+        verticalAlignment = Alignment.CenterVertically,
     ) {
-        Text(label, color = MutedText, fontSize = 11.sp)
-        Text(value, color = Color.White, fontSize = 16.sp, fontWeight = FontWeight.Bold)
+        Text(label, color = MutedText, fontSize = 10.sp, maxLines = 1)
+        Spacer(Modifier.width(3.dp))
+        Text(
+            value,
+            color = Color.White,
+            fontSize = 12.sp,
+            fontWeight = FontWeight.Bold,
+            maxLines = 1,
+        )
     }
 }
 

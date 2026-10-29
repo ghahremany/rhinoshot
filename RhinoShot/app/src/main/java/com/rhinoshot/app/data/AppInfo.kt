@@ -9,8 +9,8 @@ package com.rhinoshot.app.data
 object AppInfo {
 
     const val APP_NAME = "RhinoShot"
-    const val APP_VERSION = "0.3.2"
-    const val VERSION_CODE = 5
+    const val APP_VERSION = "0.3.3"
+    const val VERSION_CODE = 6
     const val PACKAGE = "com.rhinoshot.app"
     const val IOS_BUNDLE_ID = "ir.rhinoshot.clinic"
     const val MIN_ANDROID = "8.0 (API 26)"

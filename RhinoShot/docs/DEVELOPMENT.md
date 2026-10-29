@@ -277,7 +277,7 @@ class PoseEvaluatorTest {
 * نسخه‌ی افزایش‌دهنده در `app/build.gradle.kts`:
   ```kotlin
   versionCode = 3
-  versionName = "0.3.0"
+  versionName = "0.3.3"
   ```
   `versionCode` باید هر بار بیشتر شود وگرنه گوشی نصب به‌روز را رد می‌کند.
 * قبل از انتشار: `versionCode`، `versionName` و `TAG_SOFTWARE` در

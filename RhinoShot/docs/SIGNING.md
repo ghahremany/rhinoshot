@@ -55,12 +55,12 @@ adb install -r RhinoShot-v0.2.0-release.apk
 
 ```kotlin
 versionCode = 3        // عدد صحیح صعودی
-versionName = "0.3.0"
+versionName = "0.3.3"
 ```
 
 و برای هماهنگی، `TAG_SOFTWARE` در `ui/CaptureScreen.kt` را هم عوض کنید:
 ```kotlin
-exif.setAttribute(ExifInterface.TAG_SOFTWARE, "RhinoShot 0.3.0")
+exif.setAttribute(ExifInterface.TAG_SOFTWARE, "RhinoShot 0.3.3")
 ```
 
 ## چرخش کلید (در صورت نیاز)

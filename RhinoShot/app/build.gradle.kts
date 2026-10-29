@@ -15,8 +15,8 @@ android {
         applicationId = "com.rhinoshot.app"
         minSdk = 26
         targetSdk = 34
-        versionCode = 5
-        versionName = "0.3.2"
+        versionCode = 6
+        versionName = "0.3.3"
 
         // MediaPipe ships native code for every ABI; keep the two that real
         // phones use plus x86_64 for the emulator.

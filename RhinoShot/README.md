@@ -10,10 +10,20 @@
 از نسخه‌ی `0.3.0` یک **مدل سه‌بعدی قابل چرخش** از چهره هم ساخته می‌شود و یک
 **منوی همبرگری** با صفحه‌ی «درباره‌ی اپ و توسعه‌دهنده» اضافه شده است.
 
-نسخه: `0.3.2` · بسته: `com.rhinoshot.app` · حداقل اندروید: 8.0 (API 26)
+نسخه: `0.3.3` · بسته: `com.rhinoshot.app` · حداقل اندروید: 8.0 (API 26)
 
 > ⚠️ مدل سه‌بعدی از یک عکس تک‌چشمی ساخته می‌شود؛ برای **مشاهده و گفت‌وگو** است و
 > جایگزین اندازه‌گیری دقیق جراحی (سنسور عمق / سی‌تی‌اسکن) نیست.
+
+---
+
+## ۰٫۳٫۳ — چیدمان صفحه‌ی عکاسی
+
+* چهار کاشی **«چرخش»، «سر»، «لبخند» و «نور»** به چیپ‌های کوچکِ یک‌خطی تبدیل شدند
+  (برچسب و مقدار کنار هم، گوشه‌ی گرد کامل، عرض مساوی) و در **پایین‌ترین ردیف صفحه** می‌نشینند.
+* **بیضی راهنمای چهره بالاتر رفت** (۰٫۶۶ عرض / ۰٫۳۴ ارتفاع، مرکز ۰٫۳۳ ارتفاع) و ارتفاع
+  قوس زاویه از ۷۶dp به ۵۶dp کم شد ⇒ پنل پایینی هرگز روی بیضی چهره نمی‌افتد.
+* نسخه: `versionName = 0.3.3` / `versionCode = 6`.
 
 ---
 
@@ -123,7 +133,7 @@ Android/data/com.rhinoshot.app/files/Pictures/RhinoShot/<کد>_<YYYYMMDD_HHMMSS>
 
 ```json
 {
-  "app_version": "0.3.2",
+  "app_version": "0.3.3",
   "session_id": "R1234_20261025_142501",
   "patient_code": "R1234",
   "print_size": "10x15",
@@ -170,7 +180,7 @@ Android/data/com.rhinoshot.app/files/Pictures/RhinoShot/<کد>_<YYYYMMDD_HHMMSS>
 
 ```bash
 # نصب روی گوشی متصل
-adb install -r RhinoShot-v0.3.2-release.apk
+adb install -r RhinoShot-v0.3.3-release.apk
 ```
 
 نصب دستی: فایل APK را در گوشی باز کنید و «نصب» را بزنید.
@@ -185,7 +195,7 @@ adb install -r RhinoShot-v0.3.2-release.apk
 
 ### ساخت از سورس
 ```bash
-unzip RhinoShot-v0.3.2-source.zip && cd RhinoShot
+unzip RhinoShot-v0.3.3-source.zip && cd RhinoShot
 ./gradlew assembleDebug      # خروجی: app/build/outputs/apk/debug/app-debug.apk
 ./gradlew assembleRelease    # خروجی: app/build/outputs/apk/release/app-release.apk
 ```

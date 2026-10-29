@@ -8,7 +8,7 @@
 <div align="center">
 
 **راهنمای عکاسی استاندارد کلینیک + مدل سه‌بعدی قابل چرخش از چهره**
-نسخه‌ی `0.3.2` · بسته‌ی اندروید: `com.rhinoshot.app` · بسته‌ی iOS: `ir.rhinoshot.clinic`
+نسخه‌ی `0.3.3` · بسته‌ی اندروید: `com.rhinoshot.app` · بسته‌ی iOS: `ir.rhinoshot.clinic`
 
 </div>
 
